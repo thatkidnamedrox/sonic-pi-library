@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ChordMethods
+  
+    &mdash; Documentation by YARD 0.9.28
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ChordMethods";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo;
+    
+    
+    <span class="title">ChordMethods</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ChordMethods
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/sonicpi/chord.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Namespace for Chord methods.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chord_changes-instance_method" title="#chord_changes (instance method)">#<strong>chord_changes</strong>(chord_symbols, time_scale = 4)  &#x21d2; Hash{Numeric =&gt; String} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Manages chord changes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chord_function-instance_method" title="#chord_function (instance method)">#<strong>chord_function</strong>(chord_symbol, target_chord_symbol)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates function of approach chord in relation to target chord.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chord_info-instance_method" title="#chord_info (instance method)">#<strong>chord_info</strong>(chord_symbol)  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses chord information from given chord symbol.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chord_parser-instance_method" title="#chord_parser (instance method)">#<strong>chord_parser</strong>(chord_symbols)  &#x21d2; Array&lt;Array&lt;String&gt;&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Maps chord symbols using measure division into two-dimensional array.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="chord_changes-instance_method">
+  
+    #<strong>chord_changes</strong>(chord_symbols, time_scale = 4)  &#x21d2; <tt>Hash{Numeric =&gt; String}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Manages chord changes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Generate schedule for bebop blues changes</p>
+</div></p>
+      
+      <pre class="example code"><code>chord_symbols = &quot;Dm7 G7 (Em7 A7) (Dm7 G7)&quot;
+chord_changes(chord_symbols) =&gt; {0.0=&gt;&quot;Dm7&quot;, 4.0=&gt;&quot;G7&quot;, 8.0=&gt;&quot;Em7&quot;, 10.0=&gt;&quot;A7&quot;, 12.0=&gt;&quot;Dm7&quot;, 14.0=&gt;&quot;G7&quot;}</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>chord_symbols</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>time_scale</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>4</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{Numeric =&gt; String}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sonicpi/chord.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_chord_changes'>chord_changes</span> <span class='lparen'>(</span><span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='comma'>,</span> <span class='id identifier rubyid_time_scale'>time_scale</span><span class='op'>=</span><span class='int'>4</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_chord_structure'>chord_structure</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_parser'>chord_parser</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span>
+  <span class='id identifier rubyid_chord_structure_flat'>chord_structure_flat</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_structure'>chord_structure</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_ring'>ring</span>
+  <span class='id identifier rubyid_duration'>duration</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_structure'>chord_structure</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>*</span> <span class='id identifier rubyid_time_scale'>time_scale</span>
+  <span class='id identifier rubyid_times'>times</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_structure'>chord_structure</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_line'>line</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='op'>*</span><span class='id identifier rubyid_time_scale'>time_scale</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>*</span><span class='id identifier rubyid_time_scale'>time_scale</span><span class='op'>+</span><span class='id identifier rubyid_time_scale'>time_scale</span><span class='comma'>,</span><span class='label'>steps:</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_times_flat'>times_flat</span> <span class='op'>=</span> <span class='id identifier rubyid_times'>times</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+  <span class='id identifier rubyid_arrange'>arrange</span> <span class='id identifier rubyid_times_flat'>times_flat</span><span class='comma'>,</span> <span class='id identifier rubyid_duration'>duration</span><span class='comma'>,</span> <span class='float'>0.25</span> <span class='kw'>do</span> <span class='op'>|</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_d'>d</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='comma'>,</span> <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span>
+    <span class='id identifier rubyid_time_index'>time_index</span> <span class='op'>=</span> <span class='id identifier rubyid_times_flat'>times_flat</span><span class='period'>.</span><span class='id identifier rubyid_find_index'>find_index</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_chrd'>chrd</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_structure_flat'>chord_structure_flat</span><span class='lbracket'>[</span><span class='id identifier rubyid_time_index'>time_index</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_chrd'>chrd</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_tonic'>tonic</span><span class='comma'>,</span> <span class='id identifier rubyid_chord_name'>chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_bass'>bass</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_info'>chord_info</span><span class='lparen'>(</span><span class='id identifier rubyid_chrd'>chrd</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_c'>c</span> <span class='op'>=</span> <span class='id identifier rubyid_chord'>chord</span><span class='lparen'>(</span><span class='id identifier rubyid_tonic'>tonic</span><span class='comma'>,</span> <span class='id identifier rubyid_chord_name'>chord_name</span><span class='rparen'>)</span>
+      <span class='gvar'>$chrd</span> <span class='op'>=</span> <span class='id identifier rubyid_c'>c</span>
+      <span class='id identifier rubyid_cue'>cue</span> <span class='symbol'>:chord_change</span><span class='comma'>,</span> <span class='id identifier rubyid_chrd'>chrd</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_d'>d</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_times_flat'>times_flat</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_structure_flat'>chord_structure_flat</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_res'>res</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chord_function-instance_method">
+  
+    #<strong>chord_function</strong>(chord_symbol, target_chord_symbol)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculates function of approach chord in relation to target chord.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Find the functional relationship between A7 and Cmaj7</p>
+</div></p>
+      
+      <pre class="example code"><code>chord_function(&quot;A7&quot;, &quot;Cmaj7&quot;) =&gt; &quot;D&quot;</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>chord_symbol</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_chord_symbol</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sonicpi/chord.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_chord_function'>chord_function</span> <span class='lparen'>(</span><span class='id identifier rubyid_chord_symbol'>chord_symbol</span><span class='comma'>,</span> <span class='id identifier rubyid_target_chord_symbol'>target_chord_symbol</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_pitch_class'>pitch_class</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='symbol'>:C</span><span class='comma'>,</span> <span class='symbol'>:Cs</span><span class='comma'>,</span> <span class='symbol'>:D</span><span class='comma'>,</span> <span class='symbol'>:Eb</span><span class='comma'>,</span> <span class='symbol'>:E</span><span class='comma'>,</span> <span class='symbol'>:F</span><span class='comma'>,</span> <span class='symbol'>:Fs</span><span class='comma'>,</span> <span class='symbol'>:G</span><span class='comma'>,</span> <span class='symbol'>:Ab</span><span class='comma'>,</span> <span class='symbol'>:A</span><span class='comma'>,</span> <span class='symbol'>:Bb</span><span class='comma'>,</span> <span class='symbol'>:B</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_target_chord_name'>target_chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_target_chord_quality'>target_chord_quality</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_info'>chord_info</span><span class='lparen'>(</span><span class='id identifier rubyid_target_chord_symbol'>target_chord_symbol</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_chord'>target_chord</span> <span class='op'>=</span> <span class='id identifier rubyid_chord'>chord</span><span class='lparen'>(</span><span class='id identifier rubyid_target_chord_name'>target_chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_target_chord_quality'>target_chord_quality</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_pitch_class'>pitch_class</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span> <span class='op'>%</span> <span class='int'>12</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_ring'>ring</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+  <span class='id identifier rubyid_chord_name'>chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_chord_quality'>chord_quality</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_info'>chord_info</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_symbol'>chord_symbol</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>=</span> <span class='id identifier rubyid_degree'>degree</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_name'>chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_target_chord_name'>target_chord_name</span><span class='comma'>,</span> <span class='symbol'>:diatonic</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_chord_name'>chord_name</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[da]{0,2}[viVI]{1,3}</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_approach_chord'>approach_chord</span> <span class='op'>=</span> <span class='id identifier rubyid_chord'>chord</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_name'>chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_chord_quality'>chord_quality</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_pitch_class'>pitch_class</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span> <span class='op'>%</span> <span class='int'>12</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_ring'>ring</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+  <span class='id identifier rubyid_common_tones'>common_tones</span> <span class='op'>=</span> <span class='id identifier rubyid_target_chord'>target_chord</span> <span class='op'>&amp;</span> <span class='id identifier rubyid_approach_chord'>approach_chord</span>
+  <span class='id identifier rubyid_tritone_present'>tritone_present</span> <span class='op'>=</span> <span class='id identifier rubyid_approach_chord'>approach_chord</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_approach_chord'>approach_chord</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span> <span class='rbrace'>}</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_find_index'>find_index</span><span class='lparen'>(</span><span class='int'>6</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_tritone_present'>tritone_present</span>
+    <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>D</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_common_tones'>common_tones</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='int'>2</span>
+    <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>S</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_f'>f</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chord_info-instance_method">
+  
+    #<strong>chord_info</strong>(chord_symbol)  &#x21d2; <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses chord information from given chord symbol.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Parse chord symbol into root and chord quality</p>
+</div></p>
+      
+      <pre class="example code"><code>chord_info(&quot;Cdim7&quot;) =&gt; [&quot;C&quot;, &quot;dim7&quot;]</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>chord_symbol</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>chord name, chord quality</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sonicpi/chord.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_chord_info'>chord_info</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_symbol'>chord_symbol</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_white_keys'>white_keys</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CDEFGAB</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_roman_numerals'>roman_numerals</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>V</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>v</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_accidentals'>accidentals</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_chord_quality'>chord_quality</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_cs'>cs</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_symbol'>chord_symbol</span>
+  <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='comment'># check first for accidental, i.e. bVII
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_accidentals'>accidentals</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>+=</span> <span class='id identifier rubyid_a'>a</span>
+    <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
+    <span class='kw'>while</span> <span class='id identifier rubyid_roman_numerals'>roman_numerals</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>+=</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_roman_numerals'>roman_numerals</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>while</span> <span class='id identifier rubyid_roman_numerals'>roman_numerals</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>+=</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_white_keys'>white_keys</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>+=</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_accidentals'>accidentals</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>s</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_chord_name'>chord_name</span> <span class='op'>+=</span> <span class='id identifier rubyid_a'>a</span>
+      <span class='id identifier rubyid_i'>i</span><span class='op'>+=</span><span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_chord_quality'>chord_quality</span> <span class='op'>=</span> <span class='id identifier rubyid_cs'>cs</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='op'>..</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_alternative_chord_names'>alternative_chord_names</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>maj7</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>M7</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min7</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m7</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>M</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-7</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m7</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_chord_names'>chord_names</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_chord_quality'>chord_quality</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_chord_quality'>chord_quality</span> <span class='op'>=</span> <span class='id identifier rubyid_alternative_chord_names'>alternative_chord_names</span><span class='lbracket'>[</span><span class='id identifier rubyid_chord_quality'>chord_quality</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+  <span class='comment'>##| chord_quality = &quot;maj&quot; if chord_quality == &quot;&quot;
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_chord_name'>chord_name</span><span class='comma'>,</span> <span class='id identifier rubyid_chord_quality'>chord_quality</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chord_parser-instance_method">
+  
+    #<strong>chord_parser</strong>(chord_symbols)  &#x21d2; <tt>Array&lt;Array&lt;String&gt;&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Maps chord symbols using measure division into two-dimensional array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Parse bebop blues progression by measure</p>
+</div></p>
+      
+      <pre class="example code"><code>chord_symbols = &quot;Dm7 G7 (Em7 A7) (Dm7 G7)&quot;
+chord_parser(chord_symbols) =&gt; [[&quot;Dm7&quot;], [&quot;G7&quot;], [&quot;Em7&quot;, &quot;A7&quot;], [&quot;Dm7&quot;, &quot;G7&quot;]]</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>chord_symbols</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Array&lt;String&gt;&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>chords mapped using measure division</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sonicpi/chord.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_chord_parser'>chord_parser</span> <span class='lparen'>(</span><span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_chord_symbols'>chord_symbols</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_chords'>chords</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+  <span class='kw'>while</span> <span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_chord_symbol'>chord_symbol</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='rbracket'>]</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_chord_symbol'>chord_symbol</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_index'>index</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='kw'>while</span> <span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_chord_symbol'>chord_symbol</span> <span class='op'>=</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='rbracket'>]</span>
+        <span class='kw'>break</span> <span class='kw'>if</span> <span class='id identifier rubyid_chord_symbol'>chord_symbol</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>+=</span> <span class='id identifier rubyid_chord_symbol'>chord_symbol</span>
+        <span class='id identifier rubyid_index'>index</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_chords'>chords</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_current_chord'>current_chord</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_chords'>chords</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_current_chord'>current_chord</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_current_chord'>current_chord</span> <span class='op'>+=</span> <span class='id identifier rubyid_chord_symbols'>chord_symbols</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='rbracket'>]</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_index'>index</span> <span class='op'>==</span> <span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='int'>1</span>
+        <span class='id identifier rubyid_chords'>chords</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_current_chord'>current_chord</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_index'>index</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_chords'>chords</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_chrd'>chrd</span><span class='op'>|</span> <span class='id identifier rubyid_chrd'>chrd</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_res'>res</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Dec  7 01:45:27 2022 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.28 (ruby-2.7.0).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+lib/sonicpi/hash.rb b51cb907607fea2b7a0666889c1541554ebde82d
+lib/sonicpi/ring.rb db699970d74976d36fbcb9ff4e7a30e3b06ff2ee
+lib/sonicpi/util.rb f89e809c38e83945ea7c05158f1adbe838ef4f1f
+lib/sonicpi/chord.rb 1644c1755e16333a7a118e5c957b90020e3d7bc6
+lib/sonicpi/string.rb 4e954cc54b3b1e05112b819b1f406de8f0df1f8c
+lib/sonicpi/numeric.rb 8ccb3b891efedb709d08fd7262c37898a60fdbbd
